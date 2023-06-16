@@ -67,8 +67,8 @@ def main():
                     .alias ("w")
 
     resultB = tab1.window(tumble_window) \
-    .group_by(col('cid'), col('w')) \
-    .select(col('cid'), col('w').start.alias('time_start'), col("heartrate").avg.alias('avg_h'))
+        .group_by(col('cid'), col('w')) \
+        .select(col('cid'), col('w').start.alias('time_start'), col("heartrate").avg.alias('avg_h'))
    
     resultB.execute().print() #print in console
     final_result_B=resultB.execute_insert(output_table_name_taskB) #write to target file
