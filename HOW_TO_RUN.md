@@ -5,9 +5,9 @@ docker build . -t pyflink:mysense
 ```
 
 There are 2 source files have been created to perform the task A(TaskA.py) and task B(TaskB.py), running with python will generate the output files in the output folder within the container.
-However, inorder to see the output files directly on the host system, host volumes should be mounted while running the container as following
+However, inorder to see the output files directly on the host system, host volumes should be mounted while running the container as following. Below mentioned (/path/to/mount/volume) in docker run command will be your local directory location. 
 
-## Run - Task A
+## Run - Task A 
 ```
 docker run  -v /path/to/mount/volume/data:/opt/heart_rate_flink/data pyflink:mysense  /etc/poetry/bin/poetry run python /opt/heart_rate_flink/src/TaskA.py
 ```
